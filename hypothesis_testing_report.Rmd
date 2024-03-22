@@ -1,0 +1,34 @@
+---
+title: "Análise de dados criminais - Teste de Hipótese"
+author: "Otto Tavares"
+date: "2023-03-21"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Introdução
+
+```{r importando bibliotecas, echo = TRUE}
+library(tidyverse)
+library(purrr)
+library(dlookr)
+library(summarytools)
+library(readxl)
+library(knitr)
+library(data.table)
+library(ggpubr)
+library(corrplot)
+library(rcompanion)
+```
+
+
+```{r importando dados, echo = FALSE}
+validation <- readr::read_csv("/Users/ottotavares/Library/Mobile Documents/com~apple~CloudDocs/Documents/COPPE/projetoTB/validacao/validation_loose_shenzhen_santacasa.csv", locale = readr::locale(encoding = "utf8"))
+```
+```{r analisando descritivamente as figuras de mérito do baseline, echo = FALSE}
+validation %>% dplyr::filter(train_tag == "base.sh-sc.e") %>% dfSummary(.)
+```
