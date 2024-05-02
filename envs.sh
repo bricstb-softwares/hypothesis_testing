@@ -3,7 +3,7 @@
 export DOCKER_NAMESPACE=jodafons
 
 #expose to jupyter
-export DOCKER_EXPOSE=8080
+export DOCKER_EXPOSE=8081
 
 # virtualenv name
 export VIRTUALENV_NAMESPACE='p2p-cycle-env'
